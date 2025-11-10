@@ -28,6 +28,7 @@ The project uses the SMS Spam Collection dataset containing 5,574 SMS messages l
 
 - Python 3.8 or higher
 - pip package manager
+- Internet connection (for downloading pre-trained BERT models)
 
 ### Setup
 
@@ -42,11 +43,18 @@ cd sms-spam
 pip install -r requirements.txt
 ```
 
+**Note**: On first run, the script will download the pre-trained BERT model (~440MB) from Hugging Face. This requires internet access and may take a few minutes.
+
 ### Optional: GPU Support
 
 For faster training with NVIDIA GPU:
 ```bash
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
+
+For CPU-only installation:
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 ```
 
 ## Usage
@@ -87,7 +95,25 @@ After running the script, you'll have:
 
 ### Using the Trained Model
 
-To use the trained model for predictions:
+#### Option 1: Command Line Interface
+
+For quick single predictions:
+
+```bash
+python predict.py "WINNER! You have won a $1000 prize. Call now!"
+```
+
+#### Option 2: Interactive Demo
+
+Run the interactive demo for testing multiple messages:
+
+```bash
+python demo.py
+```
+
+#### Option 3: Python API
+
+To use the trained model programmatically:
 
 ```python
 import torch
@@ -137,17 +163,44 @@ print(f"Prediction: {label} (confidence: {confidence:.4f})")
 ```
 sms-spam/
 ├── sms+spam+collection/
-│   ├── SMSSpamCollection    # Dataset file
+│   ├── SMSSpamCollection    # Dataset file (5,572 SMS messages)
 │   └── readme               # Dataset information
-├── sms_spam_bert.py          # Main implementation script
-├── sms_spam_bert_roadmap.md  # Detailed project roadmap
+├── sms_spam_bert.py          # Main implementation script (complete pipeline)
+├── demo.py                   # Interactive demo for testing predictions
+├── predict.py                # Command-line prediction tool
+├── test_implementation.py    # Validation script for testing setup
+├── sms_spam_bert_roadmap.md  # Detailed project roadmap and tutorial
 ├── requirements.txt          # Python dependencies
 ├── README.md                 # This file
+├── USER_GUIDE.md             # Comprehensive user guide
 └── saved_model/              # Trained model (generated after training)
     ├── config.json
     ├── pytorch_model.bin
     └── tokenizer files
 ```
+
+## Available Scripts
+
+1. **sms_spam_bert.py** - Complete training pipeline
+   - Loads and analyzes dataset
+   - Trains BERT model
+   - Generates all visualizations
+   - Saves trained model
+   
+2. **demo.py** - Interactive demo
+   - Test with pre-defined messages
+   - Interactive mode for custom messages
+   - Real-time predictions
+   
+3. **predict.py** - Command-line tool
+   - Single-line predictions
+   - Batch processing friendly
+   - JSON output option
+   
+4. **test_implementation.py** - Setup validation
+   - Tests data loading
+   - Verifies tokenizer
+   - Checks dependencies
 
 ## Model Architecture
 
