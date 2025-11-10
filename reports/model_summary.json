@@ -1,0 +1,12 @@
+{
+  "model": "bert-base-uncased",
+  "total_messages": 5572,
+  "train_size": 3900,
+  "val_size": 836,
+  "test_size": 836,
+  "test_accuracy": 0.9916267942583732,
+  "test_precision": 0.972972972972973,
+  "test_recall": 0.9642857142857143,
+  "test_f1": 0.968609865470852,
+  "training_time_minutes": 87.19248432715735
+}

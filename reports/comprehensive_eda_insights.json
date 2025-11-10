@@ -1,0 +1,184 @@
+{
+  "dataset_info": {
+    "total_messages": 5572,
+    "total_spam": 747,
+    "total_ham": 4825,
+    "spam_percentage": 13.406317300789663,
+    "ham_percentage": 86.59368269921033
+  },
+  "message_length_analysis": {
+    "spam": {
+      "avg_chars": 138.6706827309237,
+      "avg_words": 23.91164658634538,
+      "min_chars": 13,
+      "max_chars": 223,
+      "median_chars": 149.0
+    },
+    "ham": {
+      "avg_chars": 71.48290155440415,
+      "avg_words": 14.310259067357514,
+      "min_chars": 2,
+      "max_chars": 910,
+      "median_chars": 52.0
+    }
+  },
+  "data_quality": {
+    "duplicate_messages": 403,
+    "duplicate_percentage": 7.232591529073941,
+    "missing_values": 0
+  },
+  "vocabulary": {
+    "total_words": 86909,
+    "unique_words": 13579,
+    "vocab_richness": 0.15624388728440092
+  },
+  "top_features": {
+    "spam_top_words": [
+      {
+        "word": "to",
+        "frequency": 685
+      },
+      {
+        "word": "a",
+        "frequency": 375
+      },
+      {
+        "word": "call",
+        "frequency": 342
+      },
+      {
+        "word": "your",
+        "frequency": 263
+      },
+      {
+        "word": "you",
+        "frequency": 252
+      },
+      {
+        "word": "the",
+        "frequency": 204
+      },
+      {
+        "word": "for",
+        "frequency": 202
+      },
+      {
+        "word": "or",
+        "frequency": 188
+      },
+      {
+        "word": "free",
+        "frequency": 180
+      },
+      {
+        "word": "2",
+        "frequency": 169
+      },
+      {
+        "word": "is",
+        "frequency": 152
+      },
+      {
+        "word": "ur",
+        "frequency": 144
+      },
+      {
+        "word": "on",
+        "frequency": 142
+      },
+      {
+        "word": "txt",
+        "frequency": 136
+      },
+      {
+        "word": "have",
+        "frequency": 135
+      }
+    ],
+    "ham_top_words": [
+      {
+        "word": "i",
+        "frequency": 2181
+      },
+      {
+        "word": "you",
+        "frequency": 1669
+      },
+      {
+        "word": "to",
+        "frequency": 1552
+      },
+      {
+        "word": "the",
+        "frequency": 1125
+      },
+      {
+        "word": "a",
+        "frequency": 1058
+      },
+      {
+        "word": "u",
+        "frequency": 881
+      },
+      {
+        "word": "and",
+        "frequency": 846
+      },
+      {
+        "word": "in",
+        "frequency": 790
+      },
+      {
+        "word": "my",
+        "frequency": 745
+      },
+      {
+        "word": "is",
+        "frequency": 717
+      },
+      {
+        "word": "me",
+        "frequency": 590
+      },
+      {
+        "word": "of",
+        "frequency": 519
+      },
+      {
+        "word": "for",
+        "frequency": 502
+      },
+      {
+        "word": "that",
+        "frequency": 444
+      },
+      {
+        "word": "it",
+        "frequency": 441
+      }
+    ]
+  },
+  "training_readiness": {
+    "class_imbalance_ratio": 6.459170013386881,
+    "average_message_length": 80.49030868628859,
+    "tokenization_recommendation": "Use max_length=128 (covers 99.84% of messages)",
+    "suggested_batch_size": "8-16 (CPU optimized)",
+    "recommended_epochs": 3,
+    "data_quality_score": "Excellent (0.84% errors, minimal duplicates)"
+  },
+  "statistical_summary": {
+    "class_balance": "13.4% spam, 86.6% ham",
+    "message_characteristics": {
+      "average_length_chars": 80,
+      "median_length_chars": 62,
+      "average_words": 15.597451543431443,
+      "median_words": 12
+    },
+    "quality_metrics": {
+      "completeness": "100% (no missing values)",
+      "duplicates": "7.23%",
+      "errors_found": 7,
+      "error_rate": "0.84%"
+    }
+  }
+}
